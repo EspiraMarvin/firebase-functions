@@ -7,3 +7,10 @@ const functions = require("firebase-functions");
 //   functions.logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
 // });
+
+//  http request 1
+
+exports.randomNumber = functions.https.onRequest((req, res) => {
+  const number = Math.round(Math.random() * 100);
+  res.send(number.toString());
+});
